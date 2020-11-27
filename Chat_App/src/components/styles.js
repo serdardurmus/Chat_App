@@ -12,7 +12,7 @@ export const input = StyleSheet.create({
 
 export const button = StyleSheet.create({
   container: {
-    backgroundColor: 'purple',
+    backgroundColor: '#0095a7',
     margin: 10,
     padding: 10,
     alignItems: 'center',
@@ -32,7 +32,7 @@ export const button_outline = StyleSheet.create({
     borderRadius: 5,
   },
   title: {
-    color: 'purple',
+    color: '#0095a7',
     fontWeight: 'bold',
   },
 });

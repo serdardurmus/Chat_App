@@ -11,7 +11,7 @@ export const authStyle = StyleSheet.create({
     resizeMode: 'contain',
   },
   logoText: {
-      color: 'purple',
+      color: '#0095a7',
       fontSize: 35,
       fontWeight: 'bold'
   }

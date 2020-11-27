@@ -40,7 +40,7 @@ const Login = (props) => {
               }}
             />
             <Button title="Sign In" />
-            <Button title="Sign Up" noBorder />
+            <Button title="Sign Up" noBorder onPress={() => props.navigation.navigate("Sign")} />
           </View>
         </ScrollView>
       </KeyboardAvoidingView>

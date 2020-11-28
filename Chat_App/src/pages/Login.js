@@ -21,7 +21,12 @@ const Login = (props) => {
 
   async function login () {
     try {
-      await auth().signInWithEmailAndPassword(email, password)
+      if (email==="" || password==="")
+        {Alert.alert("sdChat", resolveAuthError("auth/null-value")) }
+      else {
+        await auth().signInWithEmailAndPassword(email, password)
+        alert("OK!")
+      }
     } catch (error) {
       Alert.alert("sdChat", resolveAuthError(error.code)) 
     }}

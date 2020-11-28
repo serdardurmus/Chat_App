@@ -17,9 +17,10 @@
 - [How to use](#how-to-use)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
+
 <!-- OVERVIEW -->
 ## Overview
-<img src="images/images(1).gif" height="500">
+Se nederst
 
 ### Built With
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->

@@ -44,7 +44,7 @@ export const postitem = StyleSheet.create({
   },
   headerContainer: {
     padding: 5,
-    backgroundColor: '#9c27b0',
+    backgroundColor: '#0095a7',
     justifyContent: 'space-between',
     flexDirection: 'row'
   },

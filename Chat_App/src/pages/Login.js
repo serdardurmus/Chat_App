@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   Dimensions,
+  Alert,
   View,
   Text,
   Image,
@@ -12,8 +13,27 @@ import {
 import {authStyle} from './styles';
 import {Input, Button} from '../components';
 import auth from '@react-native-firebase/auth';
+import { resolveAuthError } from '../functions';
 
 const Login = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function login () {
+    try {
+      await auth().signInWithEmailAndPassword(email, password)
+    } catch (error) {
+      Alert.alert("sdChat", resolveAuthError(error.code)) 
+    }}
+  /**
+   * function login () {
+      auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => alert("Greit"))
+      .catch((err) => Alert.alert("sdChat", resolveAuthError(err.code)));
+  }
+   */
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <KeyboardAvoidingView style={{flex: 1, backgroundColor: '#cfd8dc'}}>
@@ -32,14 +52,19 @@ const Login = (props) => {
                 // secureTextEntry: true,
                 keyboardType: "email-address"
               }}
+              onType={value => setEmail(value)}
             />
             <Input 
               inputProps={{
                 placeholder: "Your password ..",
                 secureTextEntry: true,
               }}
+              onType={value => setPassword(value)}
             />
-            <Button title="Sign In" />
+            <Button 
+              title="Sign In" 
+              onPress={() => login()}
+            />
             <Button title="Sign Up" noBorder onPress={() => props.navigation.navigate("Sign")} />
           </View>
         </ScrollView>

@@ -25,7 +25,7 @@ const Login = (props) => {
         {Alert.alert("sdChat", resolveAuthError("auth/null-value")) }
       else {
         await auth().signInWithEmailAndPassword(email, password)
-        alert("OK!")
+        props.navigation.navigate("Timeline");
       }
     } catch (error) {
       Alert.alert("sdChat", resolveAuthError(error.code)) 
